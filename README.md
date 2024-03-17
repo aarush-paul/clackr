@@ -24,7 +24,7 @@ Share the room url with others.
 To join a room run
 
 ```bash
-clackr-join
+  clackr-join
 ```
 and enter your name and url.
 ## Features
