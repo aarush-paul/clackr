@@ -1,5 +1,5 @@
 
-![clackr]([https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/logo.png))
+![clackr](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/logo.png)
 
 
 # Clackr
@@ -38,9 +38,9 @@ and enter your name and url.
 
 ## Screenshots
 
-![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/1.png))
-![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/2.png))
-![App Screenshot]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/3.png))
+![App Screenshot](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/1.png)
+![App Screenshot](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/2.png)
+![App Screenshot](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/3.png)
 
 
 ## Deployment
