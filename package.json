@@ -1,6 +1,6 @@
 {
   "name": "clackr",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A simple command line chat application.",
   "main": "server.js",
   "scripts": {

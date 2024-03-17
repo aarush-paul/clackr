@@ -32,7 +32,7 @@ console.log(chalk.bold.blue("╚═════╝░╚══════╝╚
 console.log(" ");
 console.log(chalk.bold.blue("Made By Aarush Paul"));
 console.log(" ");
-console.log(chalk.yellow("https://github.com/aarush-paul/cli-chat"));
+console.log(chalk.yellow("https://github.com/aarush-paul/clackr"));
 console.log(" ");
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
