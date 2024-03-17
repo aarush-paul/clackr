@@ -61,5 +61,5 @@ To deploy this project run
 
 ## License
 
-[Creative Commons Zero v1.0 Universal]([https://choosealicense.com/licenses/mit/](https://github.com/aarush-paul/clackr/blob/main/LICENSE)https://github.com/aarush-paul/clackr/blob/main/LICENSE)
+[Creative Commons Zero v1.0 Universal](https://github.com/aarush-paul/clackr/blob/main/LICENSE)
 
