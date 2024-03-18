@@ -5,7 +5,7 @@
   "keywords" : ["chat", "clackr", "chatroom", "cli", "commandline", "chat-app"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sonyzach/usfm-validator.git"         
+    "url": "https://github.com/aarush-paul/clackr.git"         
   },
   "main": "server.js",
   "scripts": {
