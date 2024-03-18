@@ -54,7 +54,7 @@ io.listen(port);
 
 (async () => {
   const tunnel = await localtunnel({ port: port});
-  console.log(chalk.bold.green("[i] Your chat url is:  " + chalk.bold.red(tunnel.url) + ". Run `clacker join` on another terminal window and enter this url to join. Send this url to your friends and ask them to paste this link in the console after running `clackr join`. "));
+  console.log(chalk.bold.green("[i] Your chat url is:  " + chalk.bold.red(tunnel.url) + ". Run `clacker-join` on another terminal window and enter this url to join. Send this url to your friends and ask them to paste this link in the console after running `clackr-join`. "));
 })();
 
 console.log(" ");
