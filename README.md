@@ -6,6 +6,14 @@
 
 A command line based chat app made entirely in Javascript using NodeJS.
 
+## Prerequisite
+
+`nodejs` and `npm` must be installed. To install, run the following command.
+
+```bash
+  apt-get install nodejs
+  apt-get install npm
+```
 
 ## Installation
 
