@@ -3,6 +3,10 @@
   "version": "1.0.9",
   "description": "A simple command line chat application.",
   "keywords" : ["chat", "clackr", "chatroom", "cli", "commandline", "chat-app"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonyzach/usfm-validator.git"         
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
