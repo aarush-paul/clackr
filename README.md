@@ -56,6 +56,8 @@ and enter your name and url.
 To deploy this project run
 
 ```bash
+  git clone https://github.com/aarush-paul/clackr
+  cd clackr
   npm i clackr
   npm run host
   npm run join
