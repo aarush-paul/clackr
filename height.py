@@ -4,7 +4,7 @@ print("Your height is ", ((a/2.54)//12), "ft ", ((((a/2.54)/12)-((a/2.54)//12))*
 # In ((a/2.54)//12), height in cm is converted in inches first and then floor divided by 12 to 
 # convert into feet without decimal part, which gives the whole number part of feet as output.
  
-# The ((((a/2.54)/12)-((a/2.54)//12))*12) can be broken into two parts, (((a/2.54)/12) and ((a/2.54)//12).
+# The ((((a/2.54)/12)-((a/2.54)//12))*12) can be broken into two parts, ((a/2.54)/12) and ((a/2.54)//12).
 
 # In ((a/2.54)/12), height in cm is directly converted from cm to feet with the decimal part, by dividing 
 # the input by 2.54 and then again diving the result by 12.
