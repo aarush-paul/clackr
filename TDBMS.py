@@ -132,10 +132,10 @@ def delete(r):
         json.dump(names, f)
     with open("m.json", "w") as f:
         json.dump(marks, f)
+    encode()
     print("[i] Record deleted successfully")
     print()
     time.sleep(2)
-    encode()
 
 def menu():
     while True:
