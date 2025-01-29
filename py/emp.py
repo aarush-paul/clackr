@@ -5,10 +5,9 @@ for i in range(n):
     a=int(input("Enter age: "))
     s=int(input("Enter salary: "))
     d[n]=[a,s]
-nd=d
-for i in nd:
-    j=nd[i]
+print("Old Dictionary: ", d)
+for i in d:
+    j=d[i]
     if j[0]>=55:
         j[1]+=j[1]/5
-print("Old Dictionary: ", d)
-print("New Dictionary: ", nd)
+print("New Dictionary: ", d)
