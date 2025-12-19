@@ -91,10 +91,37 @@ docker run -p 3000:3000 clackr
 
 | Command | Description |
 |---------|-------------|
-| `/rooms` | List all available rooms |
-| `/help` | Show help and available commands |
-| `/leave` | Leave room and exit |
-| Just type and press Enter | Send a message |
+| `/rooms` | List all available rooms with user count |
+| `/help` | Show all available commands |
+| `/leave` | Leave room and exit Clackr |
+| Any text + Enter | Send a message to the room |
+
+## Features in Detail
+
+### Real-Time Updates
+- **User Join/Leave Notifications** - See instantly when others join or leave
+- **Live User Count** - Room displays current number of users
+- **Instant Message Delivery** - Messages appear in real-time with timestamps
+- **Connection Status** - Get notified when connected/disconnected
+
+### Room Management
+- **Create Rooms** - Create new rooms with custom names
+- **Join Existing Rooms** - Browse and join any available room
+- **Auto Room Cleanup** - Rooms automatically destroyed when last user leaves
+- **Room ID Tracking** - Each room has a unique identifier
+
+### User Experience
+- **Beautiful ASCII Banner** - ASCII art welcome screen with Clackr logo
+- **Color-Coded Messages** - Different colors for your messages vs others
+- **Message Timestamps** - Every message includes local timestamp
+- **Automatic Username** - Generates random username if not provided
+- **Command Help** - Type `/help` for in-chat assistance
+
+### Connection Features
+- **Auto-Reconnection** - Automatically reconnects on connection loss
+- **Fallback Transport** - Uses HTTP polling if WebSocket unavailable
+- **Connection Timeout Handling** - 10-second timeout with clear error messages
+- **Graceful Disconnection** - Clean exit on Ctrl+C
 
 ## Architecture
 
@@ -113,9 +140,15 @@ docker run -p 3000:3000 clackr
 
 ### Environment Variables
 ```bash
-CLACKR_SERVER=http://localhost:3000  # Server URL for client
-PORT=3000                             # Server port
-NODE_ENV=development                  # Environment mode
+CLACKR_SERVER=https://clackr-server.vercel.app  # Default server (or your own)
+PORT=3000                                       # Server port
+NODE_ENV=development                            # Environment mode
+```
+
+**Note:** The client defaults to `https://clackr-server.vercel.app` but you can override it:
+```bash
+export CLACKR_SERVER=http://localhost:3000
+clackr
 ```
 
 ## Project Structure
