@@ -1,0 +1,55 @@
+# npm Package Exclusions
+# Files not included in the npm package
+
+# Documentation
+INDEX.md
+GETTING_STARTED.md
+SETUP_COMPLETE.md
+QUICKSTART.md
+COMMANDS_REFERENCE.md
+QUICK_REFERENCE.txt
+PROJECT_FILES.md
+NPM_PUBLISHING_GUIDE.md
+
+# Deployment
+Dockerfile
+docker-compose.yml
+
+# Development
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.example
+
+# Scripts
+verify-setup.sh
+build.sh
+start-server.sh
+
+# Git
+.git
+.gitignore
+.github
+
+# System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Dependencies
+node_modules
+
+# Test
+*.test.js
+__tests__
+coverage

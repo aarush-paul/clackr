@@ -1,0 +1,53 @@
+{
+  "name": "clackr",
+  "version": "1.0.0",
+  "description": "A real-time CLI-based chat application with dynamic rooms, WebSocket support, and beautiful terminal UI",
+  "main": "bin/clackr.js",
+  "type": "module",
+  "bin": {
+    "clackr": "./bin/clackr.js"
+  },
+  "scripts": {
+    "start": "node bin/clackr.js",
+    "dev": "node bin/server.js",
+    "build": "echo 'No build needed'",
+    "vercel": "node bin/server.js"
+  },
+  "keywords": [
+    "chat",
+    "cli",
+    "terminal",
+    "real-time",
+    "websocket",
+    "socket.io",
+    "messaging",
+    "communication",
+    "interactive",
+    "tui"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/clackr.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/clackr#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/clackr/issues",
+    "email": "your.email@example.com"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.12",
+    "figlet": "^1.7.0",
+    "ora": "^8.0.1",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
