@@ -1,0 +1,34 @@
+{
+  "name": "clackr",
+  "version": "1.2.2",
+  "description": "A simple command line chat application.",
+  "keywords" : ["chat", "clackr", "chatroom", "cli", "commandline", "chat-app"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aarush-paul/clackr.git"         
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "host": "node server.js",
+    "join": "node client.js"
+  },
+  "bin": {
+    "clackr-host": "./server.js",
+    "clackr-join": "./client.js"
+  },
+  "author": "Aarush Paul",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "clui": "^0.3.6",
+    "inquirer": "^9.1.4",
+    "localtunnel": "^2.0.2",
+    "ngrok": "^4.3.3",
+    "prompt": "^1.3.0",
+    "prompt-sync": "^4.2.0",
+    "shell.js": "^4.3.4",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  }
+}
