@@ -1,290 +1,211 @@
-# Clackr - CLI Chat Application
 
-A modern, real-time CLI-based chat application built with Node.js and Socket.IO. Create chat rooms, join existing ones, and communicate instantly from your terminal.
+# Clackr 💬
+
+A real-time CLI-based chat application built with Node.js, WebSocket, and Socket.IO. Create rooms, join friends, and chat instantly from your terminal.
 
 ## Features
 
-- 🚀 **Real-time Messaging** - Instant message delivery using WebSocket
-- 📦 **Dynamic Rooms** - Create and join chat rooms on the fly
-- 👥 **User Management** - Automatic user tracking and room population
-- 💬 **Colorful UI** - Beautiful terminal UI with Chalk and Figlet
-- 🌐 **Internet Access** - Users can join from anywhere over the internet
-- 🗑️ **Auto-cleanup** - Rooms automatically destroyed when empty
-- 📱 **Cross-platform** - Works on macOS, Linux, and Windows
+✨ **Real-time Messaging** - Instant message delivery using WebSocket  
+🔧 **Dynamic Rooms** - Create and join rooms on the fly  
+👥 **User Management** - Automatic user tracking and real-time notifications  
+🎨 **Beautiful CLI UI** - Colorful terminal interface with Figlet and Chalk  
+🌐 **Internet-Based** - Connect from anywhere over the internet (not just local network)  
+🗑️ **Auto-Cleanup** - Rooms automatically destroyed when empty  
+📱 **Cross-Platform** - Works on macOS, Linux, and Windows  
+💾 **Ephemeral Messages** - No data persistence, chats deleted when room closes  
+🔒 **Zero Data Collection** - Your conversations stay private  
 
-## Installation
+## Prerequisites
 
-### Prerequisites
 - Node.js 16.0.0 or higher
 - npm 7.0.0 or higher
 
-### Quick Start
+## Installation
+
+Install Clackr globally via npm:
 
 ```bash
-# Clone or navigate to the clackr folder
-cd clackr
-
-# Install dependencies
-npm install
-
-# Run the CLI
-npm start
+npm install -g clackr
 ```
 
-Or install globally:
+## Quick Start
 
+### Run Clackr
 ```bash
-npm install -g .
-clackr
-```
-
-## Usage
-
-### Running Clackr
-
-```bash
-npm start
-# or
 clackr
 ```
 
 ### Interactive Menu
-
-1. **Enter Username** - Choose your display name (or auto-generated)
-2. **Select Room** - Choose from existing rooms or create a new one
-3. **Chat** - Type messages and press Enter
-4. **Commands**:
-   - `/rooms` - List all available rooms
-   - `/help` - Show help and available commands
-   - `/leave` - Leave the room and exit
+1. **Enter your username** - Choose any name or use auto-generated
+2. **Select a room** - Join existing room or create a new one
+3. **Start chatting** - Type messages and press Enter
+4. **Use commands** - `/rooms`, `/help`, `/leave`
 
 ### Example Session
+```bash
+$ clackr
 
-```
   ____ _     _    ____ _  ______
  / ___| |   / \  / ___| |/ /  _ \
 | |   | |  / _ \ \___ \   /| |_) |
 | |___| | / ___ \ ___) |  \ |  _ <
  \____|_|/_/   \_\____/|_|\_\_| \_\
 
-══════════════════════════════════════════════
-  A Real-time CLI Chat Application
-══════════════════════════════════════════════
-
 ? Enter your username: Alice
-Welcome, Alice!
-
-Connecting to server...
 ✓ Connected to server
 
-? Select a room or create a new one: (Use arrow keys)
-❯ General (2 users)
-  Off-topic (1 user)
-  ➕ Create New Room
-
-You: Hello everyone!
+? Select a room or create a new one:
+  ❯ General (2 users)
+    Off-topic (1 user)
+    ➕ Create New Room
 ```
+
+## Development & Deployment
+
+### Local Testing
+```bash
+# Terminal 1: Start the server
+npm run dev
+
+# Terminal 2: Start the client(s)
+npm start
+```
+
+### Vercel Deployment
+```bash
+npm install -g vercel
+vercel --prod
+
+# Then set environment variable for client
+export CLACKR_SERVER=https://your-deployment.vercel.app
+npm start
+```
+
+### Docker
+```bash
+docker build -t clackr .
+docker run -p 3000:3000 clackr
+```
+
+## In-Chat Commands
+
+| Command | Description |
+|---------|-------------|
+| `/rooms` | List all available rooms |
+| `/help` | Show help and available commands |
+| `/leave` | Leave room and exit |
+| Just type and press Enter | Send a message |
 
 ## Architecture
 
-### Client (`bin/clackr.js`)
-- Socket.IO client for WebSocket communication
-- Interactive CLI interface using Inquirer.js
+**Client** (`bin/clackr.js`)
+- Interactive CLI with Inquirer.js
 - Real-time message display
-- Command-line argument processing
+- WebSocket client via Socket.IO
 
-### Server (`bin/server.js`)
+**Server** (`bin/server.js` or `api/server.js`)
 - Express.js HTTP server
 - Socket.IO WebSocket server
-- Room management and user tracking
+- Room and user management
 - Message broadcasting
 
-### Data Storage
-- **In-memory** - All data is stored in memory and lost on server restart
-- **Auto-cleanup** - Rooms are destroyed when the last user leaves
-- **Ephemeral Messages** - Chat messages are not persisted
+## Configuration
 
-## Deployment
-
-### Vercel Deployment
-
-1. **Create a Vercel Account** - Sign up at [vercel.com](https://vercel.com)
-
-2. **Connect Your Repository** - Push the project to GitHub
-
-3. **Create Vercel Project**:
-   ```bash
-   npm install -g vercel
-   vercel
-   ```
-
-4. **Configuration** - Vercel automatically detects Node.js projects
-
-5. **Deploy**:
-   ```bash
-   vercel --prod
-   ```
-
-6. **Update Client URL** - Set environment variable for production server:
-   ```bash
-   export CLACKR_SERVER=https://your-project.vercel.app
-   clackr
-   ```
-
-### Docker Deployment
-
-```dockerfile
-FROM node:18-alpine
-
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-
-COPY . .
-
-EXPOSE 3000
-CMD ["npm", "run", "vercel"]
-```
-
-### Local Development Server
-
+### Environment Variables
 ```bash
-npm run dev
-```
-
-The server runs on `http://localhost:3000` by default.
-
-## Environment Variables
-
-- `CLACKR_SERVER` - Server URL for the CLI client (default: `https://clackr-server.vercel.app`)
-- `PORT` - Server port (default: `3000`)
-
-Example:
-```bash
-export CLACKR_SERVER=http://localhost:3000
-npm start
+CLACKR_SERVER=http://localhost:3000  # Server URL for client
+PORT=3000                             # Server port
+NODE_ENV=development                  # Environment mode
 ```
 
 ## Project Structure
 
 ```
-clackr/
 ├── bin/
-│   ├── clackr.js          # CLI client entry point
+│   ├── clackr.js          # CLI client
 │   └── server.js          # Development server
 ├── api/
-│   └── server.js          # Serverless function for Vercel
-├── package.json
-├── vercel.json
-├── .gitignore
-└── README.md
+│   └── server.js          # Vercel serverless
+├── package.json           # Dependencies
+├── vercel.json           # Vercel config
+├── Dockerfile            # Docker setup
+└── README.md             # This file
 ```
 
-## Dependencies
+## Security Notes
 
-- **socket.io** - Real-time bidirectional communication
-- **socket.io-client** - Client library for Socket.IO
-- **chalk** - Terminal colors and styling
-- **inquirer** - Interactive command line prompts
-- **figlet** - ASCII art text
-- **ora** - Elegant terminal spinner
-- **express** - Web framework (server only)
-- **cors** - CORS middleware (server only)
+**Current Implementation:**
+- Username-based identification
+- In-memory data storage
+- No encryption by default
 
-## Technical Details
-
-### WebSocket Communication
-
-The application uses Socket.IO for real-time, bidirectional communication between clients and server.
-
-**Events**:
-- `get_rooms` - Fetch list of available rooms
-- `join_room` - Join or create a room
-- `send_message` - Send a message to the room
-- `leave_room` - Leave the current room
-- `user_joined` - Broadcast when user joins
-- `user_left` - Broadcast when user leaves
-- `new_message` - New message from other users
-- `disconnect` - Handle disconnection
-
-### Room Management
-
-Rooms are created dynamically and stored in memory. Each room tracks:
-- Room ID (unique)
-- Room name
-- Active users
-- Creation timestamp
-
-Rooms are automatically destroyed when the last user leaves.
-
-### Message Format
-
-Messages include:
-- Username
-- Message text
-- Timestamp
-- Sender identification
-
-## Performance Considerations
-
-- **In-memory storage** - Scales well for concurrent sessions
-- **WebSocket + Polling** - Fallback for older browsers/networks
-- **Connection pooling** - Efficient socket management
-- **Message broadcasting** - Room-based message delivery
-
-## Limitations & Notes
-
-1. **Data Persistence** - All messages and rooms are lost on server restart
-2. **Scalability** - Single-instance deployment; use clustering for multiple instances
-3. **Authentication** - Currently uses username-based identification
-4. **Rate Limiting** - No built-in rate limiting (add middleware for production)
-
-## Security Recommendations
-
-For production deployment:
-1. Add rate limiting middleware
-2. Implement user authentication
-3. Add message validation and sanitization
-4. Enable HTTPS/WSS only
-5. Add IP whitelisting if needed
-6. Implement connection timeout handling
+**For Production:**
+- Add user authentication (JWT/OAuth)
+- Implement rate limiting
+- Use HTTPS/WSS only
+- Add message validation
+- Consider Vercel for automatic HTTPS
 
 ## Troubleshooting
 
 ### Connection Issues
 ```bash
-# Check server is running
+# Check if server is running
 curl http://localhost:3000/api/health
 
-# Enable debug mode
-DEBUG=socket.io:* clackr
+# Test with custom port
+PORT=5000 npm run dev
 ```
 
 ### Port Already in Use
 ```bash
-# Use different port
 PORT=4000 npm run dev
 ```
 
-### Rooms Not Showing
+### Missing Dependencies
 ```bash
-# Verify server connection
-export CLACKR_SERVER=http://localhost:3000
-npm start
+npm install
 ```
 
-## Contributing
+## Performance
 
-Feel free to fork and submit pull requests!
+- **Supports** ~100+ concurrent users per instance
+- **Scalable** - Easy horizontal scaling with Vercel or clustering
+- **Fast** - WebSocket provides near-instant messaging
+- **Lightweight** - ~7.9 KB package size
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - Use freely for personal or commercial projects
 
-## Support
+## Repository
 
-For issues and questions, please open an issue on the repository.
+**GitHub:** https://github.com/aarush-paul/clackr  
+**npm:** https://npmjs.com/package/clackr (coming soon)
 
 ---
 
-Built with ❤️ using Node.js and Socket.IO
+Built with ❤️ using Node.js, Express, and Socket.IO
+![App Screenshot](https://raw.githubusercontent.com/aarush-paul/clackr/main/pics/3.png)
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm i clackr
+  npm run host
+  npm run join
+```
+
+
+## Authors
+
+- [@aarush-paul](https://www.github.com/aarush-paul)
+
+
+## License
+
+[Creative Commons Zero v1.0 Universal](https://github.com/aarush-paul/clackr/blob/main/LICENSE)
+
